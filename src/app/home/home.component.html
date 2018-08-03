@@ -1,0 +1,47 @@
+<main>
+    <div class="row mt-5 pt-5">
+        <!--Search Bar-->
+        <div class="container">
+            <div class="card info-color-dark">
+                <div class="card-body text-center  z-depth-3">
+                    <div class="md-form input-group">
+                        <input type="search" class="form-control bg-white" placeholder="Search for..">
+                        <div class="input-group-btn">
+                            <button class="btn rgba-purple-strong btn-lg waves-light" type="button" mdbWavesEffect>Go!</button>
+                        </div>
+                    </div>
+                </div>
+                <!--/.Card content-->
+            </div>
+        </div>
+    </div>
+    <!--/Search Bar-->
+    <hr>
+    <div class="container mt-5 pt-5">
+        <section class="py-4 text-center text-lg-left">
+            <ng-container *ngFor="let post of posts">
+            <div class="row">
+                <div class="col-lg-5 col-xl-4 mb-4">
+                    <!--Featured image-->
+                    <div class="view overlay rounded z-depth-1-half waves-light" mdbWavesEffect>
+                        <img src={{post?.img}} class=" rounded img-fluid" alt="First sample image">
+                        <a>
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
+                    <h3 class="mb-3 font-weight-bold dark-grey-text">
+                        <strong>{{post?.title}}</strong>
+                    </h3>
+                    <p class="grey-text">{{post?.description}}</p>
+                    <p>by
+                        <a class="font-weight-bold dark-grey-text">{{post?.company}}</a>, 26/08/2018</p>
+                    <a (click)="onSelect(post)"class="btn btn-secondary btn-md waves-light"  mdbWavesEffect>Details</a>
+                </div>
+            </div>
+            <hr class="mb-5">
+        </ng-container>
+        </section>
+    </div>
+</main>

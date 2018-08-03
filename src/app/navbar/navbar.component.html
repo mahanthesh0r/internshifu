@@ -1,0 +1,57 @@
+<!-- Navbar Start -->
+<mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark blue  scrolling-navbar ie-nav" [containerInside]="true">
+    <logo>
+        <a class="logo navbar-brand" href="#">
+            <strong>Internshifu</strong>
+        </a>
+    </logo>
+    <links>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active waves-light" mdbWavesEffect>
+                <a class="nav-link" routerLink="/">Home
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+
+            <li class="nav-item waves-light" mdbWavesEffect>
+                <!-- <a class="nav-link" *ngIf="!api.UserLoggedIn()" routerLink="/sign-up">Sign up</a> -->
+
+            </li>
+        </ul>
+        <ul class="navbar-nav nav-flex-icons">
+            <li class="nav-item waves-light" mdbWavesEffect>
+                <!-- <a class="nav-link" > <i class="fa fa-user"></i> Login</a> -->
+                <!-- <div class="btn-group " mdbDropdown>
+                    <button mdbDropdownToggle class="btn btn-amber btn-sm dropdown-toggle waves-light" type="button" *ngIf="api.UserLoggedIn()"
+                        (click)="api.UserLogout()" mdbWavesEffect>
+                        Logout
+                    </button>
+                        <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                            <a class="dropdown-item waves-light" mdbWavesEffect href="#">Action</a>
+                            <a class="dropdown-item waves-light" mdbWavesEffect href="#">Another action</a>
+                            <a class="dropdown-item waves-light" mdbWavesEffect href="#">Something else here</a>
+                            <div class="divider dropdown-divider"></div>
+                            <a class="dropdown-item waves-light" mdbWavesEffect href="#">Separated link</a>
+                        </div>
+                </div> -->
+                <button class="btn btn-amber btn-sm waves-light" *ngIf="!api.UserLoggedIn()" mdbWavesEffect routerLink="/login">
+                    <i class="fa fa-user mr-1"></i> Login</button>
+                <!-- <a class="nav-link" *ngIf="api.UserLoggedIn()" (click)="api.UserLogout()">Logout </a> -->
+            </li>
+            <li class="nav-item dropdown" dropdown>
+                    <button dropdownToggle mdbWavesEffect type="button" class="btn btn-amber btn-sm dropdown-toggle waves-light" mdbWavesEffect *ngIf="api.UserLoggedIn()">
+                        <i class="fa fa-user mr-1"></i>
+                    Logout<span class="caret"></span></button>
+                    <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                        <a class="dropdown-item waves-light" mdbWavesEffect href="#">Action</a>
+                        <a class="dropdown-item waves-light" mdbWavesEffect href="#">Another action</a>
+                        <a class="dropdown-item waves-light" mdbWavesEffect href="#">Something else here</a>
+                        <div class="divider dropdown-divider"></div>
+                        <a class="dropdown-item waves-light" mdbWavesEffect (click)="api.UserLogout()" href="http://localhost:4200/">Logout</a>
+                    </div>
+                </li>
+
+        </ul>
+    </links>
+</mdb-navbar>
+<!-- Navbar End-->
